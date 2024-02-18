@@ -26,7 +26,7 @@ public class AuthenticationMainSystem {
         System.out.println("""
                 =================================================
                                 Lista de operações:
-                
+                                
                             1- Cadastrar um Usuário
                             2- Fazer Login
                             3- Consultar Usuários
@@ -41,7 +41,7 @@ public class AuthenticationMainSystem {
         switch (Integer.parseInt(option)) {
             case 1 -> {
                 System.out.println("""
-                        
+                                                
                         =================================================
                                 Iniciando sistema de Cadastro
                                 
@@ -74,9 +74,9 @@ public class AuthenticationMainSystem {
                     }
 
                 }
-                    for(User userOptional: users) {
-                        System.out.println(userOptional.toString());
-                    }
+                for (User userOptional : users) {
+                    System.out.println(userOptional.toString());
+                }
             }
 
             case 2 -> {
@@ -115,8 +115,9 @@ public class AuthenticationMainSystem {
                     option = scanner.next();
                 }
             }
+
             case 3 -> {
-                for (User user: users) {
+                for (User user : users) {
                     System.out.println(user.toString());
                 }
             }
@@ -129,7 +130,7 @@ public class AuthenticationMainSystem {
         scanner.close();
     }
 
-    public static User findByName (List<User> users, String name) {
+    public static User findByName(List<User> users, String name) {
         for (User user : users) {
             if (user.getName().equalsIgnoreCase(name)) {
                 return user;
