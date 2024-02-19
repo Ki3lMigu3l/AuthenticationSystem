@@ -20,7 +20,7 @@ Este é um projeto Java que implementa um sistema básico de autenticação usan
 
 1. Clone o repositório para sua máquina local.
 2. Configure o banco de dados MySQL e crie a tabela `Users` com os campos `id`, `name`, `age`, `login` e `password`.
-3. Atualize as variáveis `URL`, `USUARIO` e `SENHA` na classe `AuthenticationMainSystem` com as configurações do seu banco de dados MySQL.
+3. Atualize as variáveis `URL`, `USER` e `PASSWORD` na classe `UserDAO` com as configurações do seu banco de dados MySQL.
 4. Compile e execute o projeto.
 
 ## Contribuições
