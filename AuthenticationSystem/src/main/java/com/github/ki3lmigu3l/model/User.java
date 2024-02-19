@@ -2,6 +2,7 @@ package com.github.ki3lmigu3l.model;
 
 public class User {
 
+    private Integer id;
     private String name;
     private Integer age;
     private String login;
@@ -10,7 +11,20 @@ public class User {
     public User() {
     }
 
+    public User(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public User(String name, Integer age, String login, String password) {
+        this.name = name;
+        this.age = age;
+        this.login = login;
+        this.password = password;
+    }
+
+    public User(Integer id, String name, Integer age, String login, String password) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.login = login;
@@ -49,13 +63,31 @@ public class User {
         this.password = password;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "Informações do Usuário cadastrado { " +
-                "name: '" + name + '\'' +
-                ", age: " + age +
-                ", login: '" + login + '\'' +
-                ", password: '" + password + '\'' +
-                " }";
+
+        if (login == null && password == null && age == null) {
+            return "Informações do Usuário cadastrado { " +
+                    "id: " + id + " " +
+                    "name: '" + name + '\'' +
+                    " }";
+        } else {
+            return "Informações do Usuário cadastrado { " +
+                    "id: " + id + " " +
+                    "name: '" + name + '\'' +
+                    ", age: " + age +
+                    ", login: '" + login + '\'' +
+                    ", password: '" + password + '\'' +
+                    " }";
+        }
+
     }
 }
