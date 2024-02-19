@@ -89,9 +89,8 @@ public class AuthenticationMainSystem {
         System.out.print("Informe a sua senha: ");
         String password = scanner.next();
 
-
         User user = userDAO.findUserByID(id);
-        if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
+        if (user.getLogin().equals(login) && user.checkPassword(password)) {
             System.out.println("Login bem-sucedido! Bem-vindo " + user.getName() + "!");
         } else {
             System.out.println("Senha ou login incorreto, tente novamente...");
