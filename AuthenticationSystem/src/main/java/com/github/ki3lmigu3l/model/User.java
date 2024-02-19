@@ -1,5 +1,7 @@
 package com.github.ki3lmigu3l.model;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 public class User {
 
     private Integer id;
@@ -14,6 +16,12 @@ public class User {
     public User(Integer id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public User(String name, Integer age, String login) {
+        this.name = name;
+        this.age = age;
+        this.login = login;
     }
 
     public User(String name, Integer age, String login, String password) {
@@ -60,7 +68,12 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+        this.password = hashedPassword;
+    }
+
+    public boolean checkPassword(String password) {
+        return BCrypt.checkpw(password, this.password);
     }
 
     public Integer getId() {

@@ -59,7 +59,8 @@ public class AuthenticationMainSystem {
         System.out.print("Password: ");
         String userPassowrd = scanner.next();
 
-        User user = new User(username, age, userLogin, userPassowrd);
+        User user = new User(username, age, userLogin);
+        user.setPassword(userPassowrd);
 
         if (userDAO.saveUser(user)) {
             System.out.println("Usuário inserido no banco de dados.");
